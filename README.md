@@ -60,6 +60,12 @@ This task demonstrated the power of **exploratory data analysis** using Python, 
 
 ---
 
+## 🎥 YouTube Video
+Watch the full task walkthrough:  
+🔗 [https://youtu.be/NOLx5sOpMso](https://youtu.be/NOLx5sOpMso)
+
+---
+
 ## 🔗 Useful Links
 - [Seaborn Documentation](https://seaborn.pydata.org/)
 - [Scikit-learn Documentation](https://scikit-learn.org/)
