@@ -1,4 +1,4 @@
-# 🌸 DeveloperHub Task 1 – Iris Dataset EDA and Visualization
+# 📘 DeveloperHub Task 1 – Iris Dataset EDA and Visualization
 
 ## 📌 Task Objective
 This internship task focuses on exploring and visualizing the **Iris dataset** to develop a strong understanding of data analysis, visualization, and basic machine learning model evaluation using Python.
