@@ -12,12 +12,22 @@ def set_bg():
     st.markdown("""
     <style>
     .stApp {
+        position: relative;
+    }
+    .stApp::before {
+        content: """""";
         background-image: url("https://images.pexels.com/photos/7284/flowers-garden.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
-        filter: blur(4px);
+        filter: blur(6px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
     }
     .main > div {
         background-color: rgba(0, 0, 0, 0.65);
@@ -25,21 +35,6 @@ def set_bg():
         border-radius: 1rem;
         position: relative;
         z-index: 1;
-    }
-    .stApp:before {
-        content: "";
-        background-image: inherit;
-        background-size: inherit;
-        background-repeat: inherit;
-        background-position: inherit;
-        background-attachment: inherit;
-        filter: blur(8px);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 0;
     }
     h1 {
         font-size: 2.6rem !important;
