@@ -15,6 +15,7 @@ def set_bg():
         background-position: center;
         background-attachment: fixed;
     }
+
     .stApp::before {
         content: "";
         position: fixed;
@@ -25,16 +26,35 @@ def set_bg():
         backdrop-filter: blur(8px);
         z-index: -1;
     }
+
     .stApp > div {
         background-color: rgba(0, 0, 0, 0.7);
     }
+
     h1, h2, h3, p, label, div {
         color: #ffffff !important;
     }
+
     .stButton > button {
         color: #ffffff !important;
         background-color: rgba(0, 0, 0, 0.5) !important;
         border: 1px solid #ffffff !important;
+    }
+
+    /* Purple slider thumb */
+    input[type="range"]::-webkit-slider-thumb {
+        background: #6f42c1;
+        border: 2px solid #ffffff;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        background: #6f42c1;
+        border: 2px solid #ffffff;
+    }
+
+    input[type="range"]::-ms-thumb {
+        background: #6f42c1;
+        border: 2px solid #ffffff;
     }
     </style>
     """, unsafe_allow_html=True)
