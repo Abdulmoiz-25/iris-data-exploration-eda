@@ -6,24 +6,18 @@ import joblib
 
 st.set_page_config(page_title="Iris Flower Predictor 🌸", layout="centered")
 
-# ---- Custom background using CSS ----
+# Custom background using CSS
 def set_bg():
     st.markdown("""
     <style>
     .stApp {
-        background-image: url("https://images.pexels.com/photos/2471455/pexels-photo-2471455.jpeg");
+        background-image: url("https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=1950&q=80");
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: top center;
+        background-position: center;
         background-attachment: fixed;
     }
-    @media (max-width: 768px) {
-        .stApp {
-            background-size: contain;
-            background-position: top;
-        }
-    }
-    .block-container {
+    .main > div {
         background-color: rgba(0, 0, 0, 0.65);
         padding: 2rem;
         border-radius: 1rem;
@@ -43,48 +37,41 @@ def set_bg():
 
 set_bg()
 
-# ---- Load model ----
+# Load model
 model = joblib.load("iris_rf_model.pkl")
 
-# ---- Species info ----
+# Species info
 species_info = {
     "setosa": {
-        "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/Iris_setosa_2.jpg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Iris_setosa_flower.jpg",
         "desc": "Iris Setosa has small, purple-blue flowers and usually grows in cooler regions."
     },
     "versicolor": {
-        "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Iris_versicolor_3.jpg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/Iris_versicolor_flower.jpg",
         "desc": "Iris Versicolor, or Blue Flag, is known for its violet-blue petals and wetland habitat."
     },
     "virginica": {
-        "image": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Iris_virginica.jpg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/Iris_virginica_flower.jpg",
         "desc": "Iris Virginica produces larger flowers and thrives in marshy areas of North America."
     }
 }
 
-# ---- Title & Subtitle ----
+# App title
 st.markdown("<h1>🌸 Iris Species Predictor</h1>", unsafe_allow_html=True)
 st.markdown("<h3>Enter the flower measurements to predict the species</h3>", unsafe_allow_html=True)
 
-# ---- Input sliders ----
+# Input sliders
 sepal_length = st.slider("Sepal Length (cm)", 4.0, 8.0, 5.1)
 sepal_width = st.slider("Sepal Width (cm)", 2.0, 4.5, 3.0)
 petal_length = st.slider("Petal Length (cm)", 1.0, 7.0, 1.4)
 petal_width = st.slider("Petal Width (cm)", 0.1, 2.5, 0.2)
 
-# ---- Prediction ----
+# Prediction
 features = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
 if st.button("🔍 Predict Species"):
     pred = model.predict(features)[0]
     info = species_info[pred]
 
     st.success(f"🌼 Predicted Species: **{pred.capitalize()}**")
-
-    st.markdown(f"""
-        <div style='text-align: center;'>
-            <img src='{info["image"]}' width='300' style='border: 3px solid white; border-radius: 10px;'>
-            <p style='color: white; font-size: 16px;'>Iris {pred.capitalize()}</p>
-        </div>
-    """, unsafe_allow_html=True)
-
+    st.image(info["image"], caption=f"Iris {pred.capitalize()}", use_column_width=True)
     st.write(f"📝 {info['desc']}")
