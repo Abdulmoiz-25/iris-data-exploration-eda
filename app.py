@@ -19,7 +19,7 @@ def set_bg():
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
-        filter: blur(10px);
+        filter: blur(8px);
         position: absolute;
         top: 0;
         left: 0;
