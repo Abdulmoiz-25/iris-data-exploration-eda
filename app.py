@@ -26,12 +26,12 @@ def set_bg():
         filter: blur(8px);
         z-index: -1;
     }
-    .stApp > div > div > div > div {
+    .main .block-container {
         background-color: rgba(0, 0, 0, 0.6);
         padding: 2rem;
         border-radius: 1rem;
         position: relative;
-        z-index: 1;
+        z-index: 10;
     }
     h1 {
         font-size: 2.6rem !important;
@@ -44,6 +44,9 @@ def set_bg():
         color: #ffffff !important;
         text-align: left !important;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+    .stSlider > div > div > div > div {
+        color: #ffffff !important;
     }
     </style>
     """, unsafe_allow_html=True)
