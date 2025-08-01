@@ -1,4 +1,3 @@
-# app.py
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -7,7 +6,6 @@ import joblib
 st.set_page_config(page_title="Iris Flower Predictor 🌸", layout="centered")
 
 # Custom background using CSS
-
 def set_bg():
     st.markdown("""
     <style>
@@ -15,13 +13,13 @@ def set_bg():
         position: relative;
     }
     .stApp::before {
-        content: """""";
+        content: "";
         background-image: url("https://images.pexels.com/photos/7284/flowers-garden.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
-        filter: blur(6px);
+        filter: blur(10px);
         position: absolute;
         top: 0;
         left: 0;
@@ -82,10 +80,10 @@ petal_width = st.slider("Petal Width (cm)", 0.1, 2.5, 0.2)
 
 # Prediction
 features = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
+
 if st.button("🔍 Predict Species"):
     pred = model.predict(features)[0]
     info = species_info[pred]
-
     st.success(f"🌼 Predicted Species: **{pred.capitalize()}**")
     st.image(info["image"], caption=f"Iris {pred.capitalize()}", use_column_width=True)
     st.write(f"📝 {info['desc']}")
