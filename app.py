@@ -7,6 +7,7 @@ import joblib
 st.set_page_config(page_title="Iris Flower Predictor 🌸", layout="centered")
 
 # Custom background using CSS
+
 def set_bg():
     st.markdown("""
     <style>
@@ -16,11 +17,29 @@ def set_bg():
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
+        filter: blur(4px);
     }
     .main > div {
         background-color: rgba(0, 0, 0, 0.65);
         padding: 2rem;
         border-radius: 1rem;
+        position: relative;
+        z-index: 1;
+    }
+    .stApp:before {
+        content: "";
+        background-image: inherit;
+        background-size: inherit;
+        background-repeat: inherit;
+        background-position: inherit;
+        background-attachment: inherit;
+        filter: blur(8px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
     }
     h1 {
         font-size: 2.6rem !important;
@@ -43,15 +62,15 @@ model = joblib.load("iris_rf_model.pkl")
 # Species info
 species_info = {
     "setosa": {
-        "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/Iris_setosa_2.jpg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Iris_setosa.JPG/640px-Iris_setosa.JPG",
         "desc": "Iris Setosa has small, purple-blue flowers and usually grows in cooler regions."
     },
     "versicolor": {
-        "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Iris_versicolor_3.jpg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Iris_versicolor_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-073.jpg/640px-Iris_versicolor_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-073.jpg",
         "desc": "Iris Versicolor, or Blue Flag, is known for its violet-blue petals and wetland habitat."
     },
     "virginica": {
-        "image": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Iris_virginica.jpg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Iris_virginica.jpg/640px-Iris_virginica.jpg",
         "desc": "Iris Virginica produces larger flowers and thrives in marshy areas of North America."
     }
 }
