@@ -10,39 +10,31 @@ def set_bg():
     st.markdown("""
     <style>
     .stApp {
-        position: relative;
-    }
-    .stApp::before {
-        content: "";
         background-image: url("https://images.pexels.com/photos/7284/flowers-garden.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
-        filter: blur(8px);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
     }
-    .main > div {
-        background-color: rgba(0, 0, 0, 0.65);
+    .stApp > div > div > div > div {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         padding: 2rem;
         border-radius: 1rem;
-        position: relative;
-        z-index: 1;
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
     h1 {
         font-size: 2.6rem !important;
         font-weight: bold !important;
         color: #ffffff !important;
         text-align: left !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     }
     h3, label, .stButton>button {
         color: #ffffff !important;
         text-align: left !important;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
     </style>
     """, unsafe_allow_html=True)
