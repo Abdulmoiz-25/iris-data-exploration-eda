@@ -49,11 +49,11 @@ species_info = {
         "desc": "Iris Setosa has small, purple-blue flowers and usually grows in cooler regions."
     },
     "versicolor": {
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Iris_versicolor_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-073.jpg/640px-Iris_versicolor_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-073.jpg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Blue_Flag,_Ottawa.jpg/640px-Blue_Flag,_Ottawa.jpg",
         "desc": "Iris Versicolor, or Blue Flag, is known for its violet-blue petals and wetland habitat."
     },
     "virginica": {
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Iris_virginica.jpg/640px-Iris_virginica.jpg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Iris_virginica_2.jpg/640px-Iris_virginica_2.jpg",
         "desc": "Iris Virginica produces larger flowers and thrives in marshy areas of North America."
     }
 }
