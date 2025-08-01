@@ -5,23 +5,29 @@ import joblib
 
 st.set_page_config(page_title="Iris Flower Predictor 🌸", layout="centered")
 
-# 🌼 Custom background + heading alignment
+# 🌼 Custom background and styles
 def set_bg():
     st.markdown("""
     <style>
     .stApp {
-        background-image: url("https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=1950&q=80");
+        background-image: url("https://images.pexels.com/photos/2471455/pexels-photo-2471455.jpeg");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
         color: white;
     }
     .block-container {
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.65);
         padding: 2rem;
         border-radius: 1rem;
     }
-    h1, h3, label, .stButton>button {
+    h1 {
+        font-size: 2.4rem !important;
+        font-weight: bold !important;
+        color: #ffffff !important;
+        text-align: left !important;
+    }
+    h3, label, .stButton>button {
         color: #ffffff !important;
         text-align: left !important;
     }
@@ -30,10 +36,10 @@ def set_bg():
 
 set_bg()
 
-# Load trained model
+# Load model
 model = joblib.load("iris_rf_model.pkl")
 
-# Iris species info
+# Species data
 species_info = {
     "setosa": {
         "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/Iris_setosa_2.jpg",
@@ -49,11 +55,11 @@ species_info = {
     }
 }
 
-# App title (LEFT aligned)
-st.markdown("### 🌸 Iris Species Predictor", unsafe_allow_html=True)
-st.markdown("Enter the flower measurements to predict the species.", unsafe_allow_html=True)
+# Title and subtitle
+st.markdown("### 🌸 Iris Species Predictor")
+st.markdown("Enter the flower measurements below to predict the species.")
 
-# Input sliders
+# Input fields
 sepal_length = st.slider("Sepal Length (cm)", 4.0, 8.0, 5.1)
 sepal_width = st.slider("Sepal Width (cm)", 2.0, 4.5, 3.0)
 petal_length = st.slider("Petal Length (cm)", 1.0, 7.0, 1.4)
@@ -66,5 +72,12 @@ if st.button("🔍 Predict Species"):
     info = species_info[pred]
 
     st.success(f"🌼 Predicted Species: **{pred.capitalize()}**")
-    st.image(info["image"], caption=f"Iris {pred.capitalize()}", use_column_width=True)
+
+    st.markdown(f"""
+        <div style='text-align: center; margin-top: 1rem;'>
+            <img src='{info["image"]}' width='300' style='border: 3px solid white; border-radius: 10px;'>
+            <p style='color: white; font-size: 16px;'>Iris {pred.capitalize()}</p>
+        </div>
+    """, unsafe_allow_html=True)
+
     st.write(f"📝 {info['desc']}")
