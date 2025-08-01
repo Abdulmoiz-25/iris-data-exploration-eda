@@ -10,43 +10,29 @@ def set_bg():
     st.markdown("""
     <style>
     .stApp {
-        position: relative;
-    }
-    .stApp::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
         background-image: url("https://images.pexels.com/photos/7284/flowers-garden.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+        background-attachment: fixed;
         filter: blur(8px);
-        z-index: -1;
     }
-    .main .block-container {
-        background-color: rgba(0, 0, 0, 0.6);
-        padding: 2rem;
-        border-radius: 1rem;
-        position: relative;
-        z-index: 10;
+    .stApp > div {
+        background-color: rgba(0, 0, 0, 0.7);
+        filter: none;
     }
-    h1 {
-        font-size: 2.6rem !important;
-        font-weight: bold !important;
+    div[data-testid="stAppViewContainer"] {
+        background-color: rgba(0, 0, 0, 0.7);
+        filter: none;
+    }
+    h1, h2, h3, p, label, div {
         color: #ffffff !important;
-        text-align: left !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        filter: none !important;
     }
-    h3, label, .stButton>button {
+    .stButton > button {
         color: #ffffff !important;
-        text-align: left !important;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-    }
-    .stSlider > div > div > div > div {
-        color: #ffffff !important;
+        background-color: rgba(0, 0, 0, 0.5) !important;
+        border: 1px solid #ffffff !important;
     }
     </style>
     """, unsafe_allow_html=True)
