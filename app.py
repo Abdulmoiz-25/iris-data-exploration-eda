@@ -34,6 +34,57 @@ def set_bg():
         background-color: rgba(0, 0, 0, 0.5) !important;
         border: 1px solid #ffffff !important;
     }
+    /* Slider styling to look like bars */
+    .stSlider > div > div > div > div {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        height: 8px !important;
+        border-radius: 4px !important;
+    }
+
+    .stSlider > div > div > div > div > div {
+        background-color: #4CAF50 !important;
+        height: 8px !important;
+        border-radius: 4px !important;
+    }
+
+    .stSlider > div > div > div > div > div > div {
+        background-color: #ffffff !important;
+        border: 2px solid #4CAF50 !important;
+        width: 20px !important;
+        height: 20px !important;
+        border-radius: 50% !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3) !important;
+    }
+
+    /* Show min/max values */
+    .stSlider > div > div > div {
+        position: relative !important;
+    }
+
+    .stSlider > div > div > div::before {
+        content: attr(data-min) !important;
+        position: absolute !important;
+        left: 0 !important;
+        bottom: -20px !important;
+        color: #ffffff !important;
+        font-size: 12px !important;
+    }
+
+    .stSlider > div > div > div::after {
+        content: attr(data-max) !important;
+        position: absolute !important;
+        right: 0 !important;
+        bottom: -20px !important;
+        color: #ffffff !important;
+        font-size: 12px !important;
+    }
+
+    /* Slider labels */
+    .stSlider > label {
+        color: #ffffff !important;
+        font-weight: bold !important;
+        margin-bottom: 10px !important;
+    }
     </style>
     """, unsafe_allow_html=True)
 
