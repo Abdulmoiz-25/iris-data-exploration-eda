@@ -1,3 +1,4 @@
+# app.py
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -5,16 +6,22 @@ import joblib
 
 st.set_page_config(page_title="Iris Flower Predictor 🌸", layout="centered")
 
-# 🌼 Custom background and styles
+# ---- Custom background using CSS ----
 def set_bg():
     st.markdown("""
     <style>
     .stApp {
         background-image: url("https://images.pexels.com/photos/2471455/pexels-photo-2471455.jpeg");
         background-size: cover;
-        background-position: center;
+        background-repeat: no-repeat;
+        background-position: top center;
         background-attachment: fixed;
-        color: white;
+    }
+    @media (max-width: 768px) {
+        .stApp {
+            background-size: contain;
+            background-position: top;
+        }
     }
     .block-container {
         background-color: rgba(0, 0, 0, 0.65);
@@ -36,10 +43,10 @@ def set_bg():
 
 set_bg()
 
-# Load model
+# ---- Load model ----
 model = joblib.load("iris_rf_model.pkl")
 
-# Species data
+# ---- Species info ----
 species_info = {
     "setosa": {
         "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/Iris_setosa_2.jpg",
@@ -55,17 +62,17 @@ species_info = {
     }
 }
 
-# Title and subtitle
-st.markdown("### 🌸 Iris Species Predictor")
-st.markdown("Enter the flower measurements below to predict the species.")
+# ---- Title & Subtitle ----
+st.markdown("<h1>🌸 Iris Species Predictor</h1>", unsafe_allow_html=True)
+st.markdown("<h3>Enter the flower measurements to predict the species</h3>", unsafe_allow_html=True)
 
-# Input fields
+# ---- Input sliders ----
 sepal_length = st.slider("Sepal Length (cm)", 4.0, 8.0, 5.1)
 sepal_width = st.slider("Sepal Width (cm)", 2.0, 4.5, 3.0)
 petal_length = st.slider("Petal Length (cm)", 1.0, 7.0, 1.4)
 petal_width = st.slider("Petal Width (cm)", 0.1, 2.5, 0.2)
 
-# Prediction
+# ---- Prediction ----
 features = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
 if st.button("🔍 Predict Species"):
     pred = model.predict(features)[0]
@@ -74,7 +81,7 @@ if st.button("🔍 Predict Species"):
     st.success(f"🌼 Predicted Species: **{pred.capitalize()}**")
 
     st.markdown(f"""
-        <div style='text-align: center; margin-top: 1rem;'>
+        <div style='text-align: center;'>
             <img src='{info["image"]}' width='300' style='border: 3px solid white; border-radius: 10px;'>
             <p style='color: white; font-size: 16px;'>Iris {pred.capitalize()}</p>
         </div>
