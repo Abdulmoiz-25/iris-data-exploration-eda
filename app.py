@@ -10,19 +10,28 @@ def set_bg():
     st.markdown("""
     <style>
     .stApp {
+        position: relative;
+    }
+    .stApp::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background-image: url("https://images.pexels.com/photos/7284/flowers-garden.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        background-attachment: fixed;
+        filter: blur(8px);
+        z-index: -1;
     }
     .stApp > div > div > div > div {
-        background-color: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.6);
         padding: 2rem;
         border-radius: 1rem;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        position: relative;
+        z-index: 1;
     }
     h1 {
         font-size: 2.6rem !important;
