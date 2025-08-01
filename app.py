@@ -11,7 +11,7 @@ def set_bg():
     st.markdown("""
     <style>
     .stApp {
-        background-image: url("https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=1950&q=80");
+        background-image: url("https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -23,7 +23,7 @@ def set_bg():
         border-radius: 1rem;
     }
     h1 {
-        font-size: 2.4rem !important;
+        font-size: 2.6rem !important;
         font-weight: bold !important;
         color: #ffffff !important;
         text-align: left !important;
@@ -43,15 +43,15 @@ model = joblib.load("iris_rf_model.pkl")
 # Species info
 species_info = {
     "setosa": {
-        "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Iris_setosa_flower.jpg",
+        "image": "https://cdn.pixabay.com/photo/2023/08/13/07/25/iris-8187265_1280.jpg",
         "desc": "Iris Setosa has small, purple-blue flowers and usually grows in cooler regions."
     },
     "versicolor": {
-        "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/Iris_versicolor_flower.jpg",
+        "image": "https://cdn.pixabay.com/photo/2017/06/09/21/57/flower-2383773_1280.jpg",
         "desc": "Iris Versicolor, or Blue Flag, is known for its violet-blue petals and wetland habitat."
     },
     "virginica": {
-        "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/Iris_virginica_flower.jpg",
+        "image": "https://cdn.pixabay.com/photo/2018/06/12/23/55/iris-3470133_1280.jpg",
         "desc": "Iris Virginica produces larger flowers and thrives in marshy areas of North America."
     }
 }
