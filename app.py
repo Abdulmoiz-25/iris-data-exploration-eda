@@ -11,7 +11,7 @@ def set_bg():
     st.markdown("""
     <style>
     .stApp {
-        background-image: url("https://images.pexels.com/photos/8450495/pexels-photo-8450495.jpeg");
+        background-image: url("https://images.pexels.com/photos/7284/flowers-garden.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -43,15 +43,15 @@ model = joblib.load("iris_rf_model.pkl")
 # Species info
 species_info = {
     "setosa": {
-        "image": "https://images.pexels.com/photos/1224154/pexels-photo-1224154.jpeg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/Iris_setosa_2.jpg",
         "desc": "Iris Setosa has small, purple-blue flowers and usually grows in cooler regions."
     },
     "versicolor": {
-        "image": "https://images.pexels.com/photos/256384/pexels-photo-256384.jpeg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Iris_versicolor_3.jpg",
         "desc": "Iris Versicolor, or Blue Flag, is known for its violet-blue petals and wetland habitat."
     },
     "virginica": {
-        "image": "https://images.pexels.com/photos/615705/pexels-photo-615705.jpeg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Iris_virginica.jpg",
         "desc": "Iris Virginica produces larger flowers and thrives in marshy areas of North America."
     }
 }
