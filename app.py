@@ -1,4 +1,3 @@
-# app.py
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -6,12 +5,12 @@ import joblib
 
 st.set_page_config(page_title="Iris Flower Predictor 🌸", layout="centered")
 
-# Custom background using CSS
+# 🌼 Custom background + heading alignment
 def set_bg():
     st.markdown("""
     <style>
     .stApp {
-        background-image: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1950&q=80");
+        background-image: url("https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=1950&q=80");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -24,16 +23,17 @@ def set_bg():
     }
     h1, h3, label, .stButton>button {
         color: #ffffff !important;
+        text-align: left !important;
     }
     </style>
     """, unsafe_allow_html=True)
 
 set_bg()
 
-# Load model
+# Load trained model
 model = joblib.load("iris_rf_model.pkl")
 
-# Species info
+# Iris species info
 species_info = {
     "setosa": {
         "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/Iris_setosa_2.jpg",
@@ -49,9 +49,9 @@ species_info = {
     }
 }
 
-# App title
-st.markdown("<h1 style='text-align: center;'>🌸 Iris Species Predictor</h1>", unsafe_allow_html=True)
-st.markdown("<h3 style='text-align: center;'>Enter the flower measurements to predict the species</h3>", unsafe_allow_html=True)
+# App title (LEFT aligned)
+st.markdown("### 🌸 Iris Species Predictor", unsafe_allow_html=True)
+st.markdown("Enter the flower measurements to predict the species.", unsafe_allow_html=True)
 
 # Input sliders
 sepal_length = st.slider("Sepal Length (cm)", 4.0, 8.0, 5.1)
