@@ -35,7 +35,7 @@ def set_bg():
         border: 1px solid #ffffff !important;
     }
     /* Slider thumb styling */
-    .stSlider > div > div > div > div > div > div {
+    div[data-testid="stSlider"] .st-bx { /* More specific selector for the slider thumb */
         background-color: #6f42c1 !important; /* Purple thumb */
         border: 2px solid #6f42c1 !important; /* Purple border */
         width: 20px !important;
