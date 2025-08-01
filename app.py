@@ -77,5 +77,5 @@ if st.button("🔍 Predict Species"):
     pred = model.predict(features)[0]
     info = species_info[pred]
     st.success(f"🌼 Predicted Species: **{pred.capitalize()}**")
-    st.image(info["image"], caption=f"Iris {pred.capitalize()}", use_column_width=True)
+    st.image(info["image"], caption=f"Iris {pred.capitalize()}", use_container_width=True)
     st.write(f"📝 {info['desc']}")
